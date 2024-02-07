@@ -1,0 +1,65 @@
+<form [formGroup]="myFormw" (ngSubmit)="onSubmit()">
+    <!-- <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-container"> -->
+  <p>
+    Date: {{date}}
+  </p>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Date</mat-label>
+    <input type="date" matInput placeholder="date" formControlName="date">
+</mat-form-field>
+    <!-- <div class="form-section">
+        <label for="equipment">Equipment</label>
+        <input type="text" id="equipment" name="equipment" [(ngModel)]="formData.equipment" placeholder="Equipment"
+            required>
+    </div> -->
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>Team/person responsible</mat-label>
+      <input type="text" matInput placeholder="Name" formControlName="responsible">
+  </mat-form-field>
+
+    <!-- <div class="form-section">
+        <label for="hours">Hours</label>
+        <input type="text" id="hours" name="hours" [(ngModel)]="formData.hours" placeholder="Hours" required>
+    </div> -->
+
+
+    <!-- <div class="form-section">
+        <label for="material">Add Materials:</label>
+       <div class="in-material">
+        <input type="text" id="material" name="material" [(ngModel)]="formData.material" placeholder="Material"
+        required>
+
+
+       </div>
+    </div> -->
+    <mat-form-field appearance="outline">
+      <mat-label>Select a material</mat-label>
+      <mat-select (selectionChange)="onSelectChange()"
+          formControlName="material">
+          <mat-option *ngFor="let option of wasteList" [value]="option.name">
+              {{ option.name }}
+          </mat-option>
+      </mat-select>
+  </mat-form-field>
+
+
+  <mat-form-field appearance="outline">
+    <mat-label>Quantity</mat-label>
+    <input type="number" matInput placeholder="10" formControlName="quantity">
+</mat-form-field>
+
+
+<mat-form-field appearance="outline">
+  <mat-label>Number of bales</mat-label>
+  <input type="number" matInput placeholder="10" formControlName="bales">
+</mat-form-field>
+
+
+    <div class="form-section" style="margin-top: 20px;">
+        <button mat-raised-button color="primary" type="submit" [disabled]="!myFormw.valid">Submit</button>
+        <!-- <button type="submit" [disabled]="!form.valid">Submit</button> -->
+    </div>
+</form>

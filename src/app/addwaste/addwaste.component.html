@@ -1,0 +1,66 @@
+<div style="background-color: #e0bea05e;padding: 20px;">
+    <h2>Add Waste at MRF</h2>
+    <hr>
+    <section class="full-height">
+        <table class="full-screen-table">
+            <!-- {{toaddArray.length}} -->
+            <!-- <tr>
+                <th>Weight at MRF</th>
+                <td *ngFor="let wst of wList;let i=index;">
+                    {{wst.name}}
+                </td>
+            </tr> -->
+        </table>
+        <form [formGroup]="myForm" (ngSubmit)="onFormSubmit()">
+            <mat-form-field appearance="outline">
+                <mat-label>Select an option</mat-label>
+                <mat-select [(value)]="name" (selectionChange)="onSelectChange()"
+                    formControlName="name">
+                    <mat-option *ngFor="let option of wList" [value]="option.name">
+                        {{ option.name }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter amount in Kg </mat-label>
+                <input type="number" matInput placeholder="10" min="0" formControlName="amount">
+            </mat-form-field>
+            <span *ngIf="!myForm.valid" style="color: rgb(0, 0, 0);">Please Fill form correctly</span>
+            <span *ngIf="myForm.valid" style="color: green;">Valid now</span>
+            <button mat-button type="submit" [disabled]="!myForm.valid">Add to List</button>
+        </form>
+
+        <!-- <td> <input type="text"> </td> -->
+        <!-- <div *ngIf="selectedOption">
+            <p>You selected: {{ selectedOption }}</p>
+        </div> -->
+    </section>
+    <section class="sec-two" *ngIf="toaddArray?.length>0">
+        List of item to be added.
+        <div *ngFor="let array of toaddArray;let i=index">
+          <!-- <span> {{array.name}} </span> -->
+            <span style="display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;">
+          <span> {{array.name}} </span>
+                <span style="color:#000000; font-weight: bold;"> {{toaddArray[toaddArray.length - 1 -
+                    i].selectedOption}}</span>
+                {{toaddArray[toaddArray.length - 1 -
+                i].amount}} Kg
+                <button mat-raised-button color="warn" (click)="remove(toaddArray[toaddArray.length - 1 -
+                i],toaddArray.length - 1 -
+                i)">Remove</button>
+            </span>
+        </div>
+        <span style="display: block;text-align: center;margin-top: 10px;">
+            <span style="font-weight: bold;">
+                Total = {{total}} Kg <br>
+            </span>
+            <button style="background-color: rgb(209 124 48); color:#fff" mat-raised-button
+                (click)="save(toaddArray)">save</button>
+
+        </span>
+    </section>
+</div>

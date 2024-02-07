@@ -1,1 +1,76 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$mrf-primary: mat.define-palette(mat.$indigo-palette);
+$mrf-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$mrf-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$mrf-theme: mat.define-light-theme((color: (primary: $mrf-primary,
+        accent: $mrf-accent,
+        warn: $mrf-warn,
+      )));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($mrf-theme);
+
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  padding: 10px 100px;
+}
+
+.mat-dialog-container {
+
+  padding: 0px !important;
+  // border-radius: 4px;
+  // box-sizing: border-box;
+  // overflow: auto;
+  // outline: 0;
+  // width: 100%;
+  // height: 100%;
+  // min-height: inherit;
+  // max-height: inherit;
+}
+.mat-content {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  overflow: hidden;
+  justify-content: space-between;
+  // padding: 26px 24px 24px 0;
+
+}
+.mat-content {
+  display: grid !important;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+}
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 10px 10px;
+  }
+}

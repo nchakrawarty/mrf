@@ -1,0 +1,25 @@
+div {
+    font-family: "Poppins", sans-serif;
+}
+
+table {
+
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+th {
+    color: #A67753;
+}
+
+td,
+th {
+    // border: 1px solid #D17C30;
+    text-align: left;
+    padding: 8px;
+}
+
+// tr:nth-child(even) {
+//     background-color: #d17b305d;
+// }

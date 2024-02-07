@@ -1,0 +1,33 @@
+<form (ngSubmit)="onSubmit()" class="form-container">
+    <!-- <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-container"> -->
+    <div class="form-section">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" [(ngModel)]="formData.date" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="ecategory">Expense Category</label>
+        <input type="text" id="ecategory" name="ecategory" [(ngModel)]="formData.ecategory"
+            placeholder="Expense category" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="amount">Amount</label>
+        <input type="text" id="amount" name="amount" [(ngModel)]="formData.amount" placeholder="amount" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="bills">Upload Bills</label>
+        <input type="file" id="bills" name="bills" [(ngModel)]="formData.bills" placeholder="Upload bills"
+            (change)="onFileChange($event)" required>
+    </div>
+
+
+    <div class="form-section" style="margin-top: 20px;">
+        <button type="submit">Submit</button>
+        <!-- <button type="submit" [disabled]="!form.valid">Submit</button> -->
+    </div>
+</form>

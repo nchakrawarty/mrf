@@ -1,0 +1,105 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-container">
+    <div class="form-section">
+
+        <label for="purchaseFor">Purchase for:</label>
+        <input type="text" id="purchaseFor" formControlName="purchaseFor" required>
+    </div>
+
+    <div class="form-section">
+
+        <label for="vendor">Vendor:</label>
+        <input type="text" id="vendor" formControlName="vendor" required>
+    </div>
+
+    <div class="form-section">
+
+        <label for="vendorInvoice">Vendor Invoice:</label>
+        <input type="text" id="vendorInvoice" formControlName="vendorInvoice">
+    </div>
+
+    <div class="form-section">
+
+        <label for="product">Product:</label>
+        <input type="text" id="product" formControlName="product" required>
+    </div>
+
+    <div class="form-section">
+
+        <label for="ratePerKg">Rate Per Kg:</label>
+        <input type="number" id="ratePerKg" formControlName="ratePerKg" required>
+    </div>
+
+    <div class="form-section">
+
+        <label for="reductionQuantityPercent">Reduction Quantity Percent:</label>
+        <input type="number" id="reductionQuantityPercent" formControlName="reductionQuantityPercent" required>
+    </div>
+
+    <div class="form-section">
+
+        <label for="quantityAfterReduction">Quantity After Reduction:</label>
+        <input type="number" id="quantityAfterReduction" formControlName="quantityAfterReduction" required>
+    </div>
+
+    <div class="form-section">
+
+        <label for="reductionQuantity">Reduction Quantity:</label>
+        <input type="number" id="reductionQuantity" formControlName="reductionQuantity" required>
+    </div>
+
+    <div class="form-section">
+
+        <label for="uploadWeightmentSlip">Upload Weightment Slip:</label>
+        <input type="file" id="uploadWeightmentSlip" formControlName="uploadWeightmentSlip" required>
+    </div>
+
+    <div class="form-section">
+
+        <label for="vehicleNumber">Vehicle Number:</label>
+        <input type="text" id="vehicleNumber" formControlName="vehicleNumber" required>
+    </div>
+
+    <div class="form-section">
+
+        <label for="transportVendor">Transport Vendor:</label>
+        <input type="text" id="transportVendor" formControlName="transportVendor" required>
+    </div>
+
+    <div class="form-section">
+
+        <label for="additionalTransportationCost">Additional Transportation Cost:</label>
+        <input type="number" id="additionalTransportationCost" formControlName="additionalTransportationCost" required>
+    </div>
+
+    <div class="form-section">
+
+        <label for="totalTransportationCost">Total Transportation Cost:</label>
+        <input type="number" id="totalTransportationCost" formControlName="totalTransportationCost" required>
+    </div>
+
+    <div class="form-section">
+
+        <label for="totalReceivedQuantity">Total Received Quantity:</label>
+        <input type="number" id="totalReceivedQuantity" formControlName="totalReceivedQuantity" required>
+    </div>
+
+    <div class="form-section">
+
+        <label for="totalPurchaseAmount">Total Purchase Amount:</label>
+        <input type="number" id="totalPurchaseAmount" formControlName="totalPurchaseAmount" required>
+    </div>
+
+    <div class="form-section">
+
+        <label for="tax">Tax:</label>
+        <input type="number" id="tax" formControlName="tax" required>
+    </div>
+
+    <div class="form-section">
+
+        <label for="totalAmount">Total Amount:</label>
+        <input type="number" id="totalAmount" formControlName="totalAmount" required>
+    </div>
+
+    <button type="submit" [disabled]="!form.valid || form.pending">Submit</button>
+</form>

@@ -20,6 +20,7 @@
             "outputPath": "dist/mrf",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "optimization": true,
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -38,7 +39,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "4mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -103,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "d204ea48-d4f4-40a0-9aee-376a11cdd614"
   }
 }

@@ -1,0 +1,127 @@
+.matcard>mat-card.mat-card.mat-focus-indicator {
+    width: 24%;
+    margin: 10px;
+}
+
+.full-height {
+    min-height: 95vh;
+    // background-color: #FFF7EF;
+    padding: 5px;
+    margin: 25px 5px 5px;
+}
+
+.full-screen-table {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    table-layout: fixed;
+    border-collapse: separate;
+    /* Use separate instead of collapse */
+    border-spacing: 0 10px;
+    /* Adjust the second value to set the desired gap between rows */
+}
+
+th:first-child,
+td:first-child {
+    border-top-left-radius: 10px;
+    /* Set rounded corners for the first cell in each row */
+    border-bottom-left-radius: 10px;
+}
+
+th:last-child,
+td:last-child {
+    border-top-right-radius: 10px;
+    /* Set rounded corners for the last cell in each row */
+    border-bottom-right-radius: 10px;
+}
+
+th,
+td {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+    /* Remove the bottom border from cells */
+}
+tr{
+  display: grid;
+  grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+
+}
+th::before,
+td::before {
+    // content: "";
+    position: absolute;
+    top: 10%;
+    right: 0px;
+    /* Adjust the position to control the border width */
+    height: 80%;
+    width: 1px;
+    /* Adjust the width of the border */
+    background-color: #949494;
+}
+
+th:last-child,
+td:last-child {
+    border-right: none;
+    /* Remove border from last column */
+}
+
+.row-with-margin {
+    margin-bottom: 15px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #FFF7EF;
+}
+
+button {
+    background-color: #D17C30;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.panel-header> td {
+  // display: none;
+}
+.mtexp {
+  padding: 5px 0px;
+  margin: 5px;
+  border-radius: 10px !important;
+}
+
+.mat-expansion-panel-header {
+  padding: 0px 10px;
+}
+
+.bagdetails {
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    border-bottom: 1px solid #D9D9D9;
+    padding: 15px;
+
+    p {
+      margin: 0px;
+      font-weight: bold;
+    }
+}
+// .mat-content {
+//   display: flex;
+//   flex: 1;
+//   flex-direction: row;
+//   overflow: hidden;
+//   justify-content: space-between;
+//   padding: 0px !important;
+
+// }
+

@@ -1,0 +1,39 @@
+<div style="background-color: #e0bee05e;padding: 20px;">
+  <h2>Add new Bag details</h2>
+  <hr>
+  <section>
+    <form [formGroup]="myForm" (ngSubmit)="onFormSubmit()">
+      <mat-form-field appearance="outline">
+        <mat-label>Choose a date</mat-label>
+        <input formControlName="time" matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>
+          Select Panchayat
+        </mat-label>
+        <mat-select [(value)]="panchayatName" (selectionChange)="onSelectChange(panchayatName)" formControlName="panchayatName">
+          <mat-option *ngFor="let option of panchList" [value]="option">
+            {{option.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>
+          Select Panchayat
+        </mat-label>
+          <input matInput value="{{option.code}} " readonly>
+         </mat-form-field>
+         <mat-form-field appearance="outline">
+          <mat-label>
+            Enter no. of Bags
+          </mat-label>
+          <input matInput placeholder="Enter no. of Bags" formControlName="bagNumber">
+           </mat-form-field>
+           <button mat-button type="submit" [disabled]="!myForm.valid">Save</button>
+
+    </form>
+  </section>
+</div>

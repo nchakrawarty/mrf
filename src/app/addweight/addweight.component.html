@@ -1,0 +1,57 @@
+<div style="background-color: #e0bea05e;padding: 20px;">
+    <h2>Add Bags and Weight at MRF</h2>
+    <hr>
+    <section class="full-height">
+        <table class="full-screen-table">
+            <tr>
+                <th>Date</th>
+                <td>{{ data.time| slice:0:10 }}</td>
+            </tr>
+            <tr>
+                <th>Time</th>
+                <td>{{ data.time | slice:12:19}}</td>
+            </tr>
+            <tr>
+                <th>Panchayat</th>
+                <td>{{ data.panchayatName }}</td>
+            </tr>
+            <tr>
+                <th>Panchayat Id</th>
+                <td>{{ data.code }}</td>
+            </tr>
+            <tr>
+                <th>Total Bag Number</th>
+                <td>{{ data.bagNumber }}</td>
+            </tr>
+            <tr>
+                <th>Bags weighed</th>
+                <td>{{ data.bagdetails?.length }}<span *ngIf="!data.bagdetails">0</span> </td>
+            </tr>
+            <tr>
+                <th>Enter bag details</th>
+              <td>
+                <form [formGroup]="myForm" (ngSubmit)="onFormSubmit()">
+                  <input formControlName="bagNum" type="text" placeholder="Enter Bag number" >
+                  <input formControlName="weight" type="num"  placeholder="Enter Bag weight">
+              <button mat-button type="submit" [disabled]="!myForm.valid">Add to List</button>
+            </form>
+            <span *ngIf="!myForm.valid" style="color: red;">Please Fill form correctly</span>
+            <span *ngIf="myForm.valid" style="color: green;">Valid now</span>
+          </td>
+            </tr>
+<tr *ngIf="toAdd.length>0">
+  <th>List of bags</th>
+  <td style="display: flex;
+  flex-direction: column;">
+    <span style="font-weight: bold; padding: 10px; background-color: #fff;margin: 5px; display: flex;justify-content: space-between;" *ngFor="let v of toAdd; let i=index">
+    Bag no. -  {{v.bagNum}} is {{v.weight}} Kg
+      <button mat-raised-button color="warn" (click)="remove(v,i)">Remove</button>
+   </span>
+   <button style="background-color: rgb(209 124 48); color:#fff" mat-raised-button
+   (click)="save(toAdd)">save</button>
+
+  </td>
+</tr>
+        </table>
+    </section>
+</div>

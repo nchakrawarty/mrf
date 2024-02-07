@@ -1,0 +1,37 @@
+<ul class="horizontal-menu" *ngIf="user">
+<img src="../../assets/baeru logo.png" width="100px">
+
+    <li [ngClass]="{ 'active': activeMenu === 'home' }">
+        <a routerLink="/home" (click)="setActiveMenu('home')">Dashboard</a>
+    </li>
+    <li [ngClass]="{ 'active': activeMenu === 'waste' }">
+        <a routerLink="/waste" (click)="setActiveMenu('waste')">Waste</a>
+    </li>
+    <!-- <li [ngClass]="{ 'active': activeMenu === 'panchayat' }">
+        <a routerLink="/panchayat" (click)="setActiveMenu('panchayat')">Panchayat</a>
+    </li>
+    <li [ngClass]="{ 'active': activeMenu === 'sale' }">
+        <a routerLink="/sale" (click)="setActiveMenu('sale')">Sale</a>
+    </li>
+    <li [ngClass]="{ 'active': activeMenu === 'purchase' }">
+        <a routerLink="/purchase" (click)="setActiveMenu('purchase')">Purchase</a>
+    </li> -->
+    <li [ngClass]="{ 'active': activeMenu === 'daily-production' }">
+        <a routerLink="/daily-production" (click)="setActiveMenu('daily-production')">Bailer</a>
+    </li>
+    <!-- <li [ngClass]="{ 'active': activeMenu === 'vehicle' }">
+        <a routerLink="/vehicle" (click)="setActiveMenu('vehicle')">Vehicle</a>
+    </li>
+    <li [ngClass]="{ 'active': activeMenu === 'expense' }">
+        <a routerLink="/expense" (click)="setActiveMenu('expense')">Expense</a>
+    </li>
+    <li [ngClass]="{ 'active': activeMenu === 'eway-bill' }">
+        <a routerLink="/eway-bill" (click)="setActiveMenu('eway-bill')">E-way bill</a>
+    </li> -->
+    <li>
+        <a (click)="logout()">Logout</a>
+    </li>
+    <div>
+
+    </div>
+</ul>

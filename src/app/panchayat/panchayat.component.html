@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="div2">
+        <div class="section">Day</div>
+        <div class="section">Week</div>
+        <div class="section">Month</div>
+        <div class="section">Quarter</div>
+        <div class="section">Year</div>
+    </div>
+    <div class="div1"></div>
+</div>
+<div class="container2">
+    <div class="left">
+        <div class="div3">
+            <div class="section2">
+                <p>Total waste</p>
+            </div>
+            <div class="section2">
+                <p>Number of trips</p>
+            </div>
+        </div>
+        <div class="div3">
+            <div class="section2">
+                <p>Incoming waste</p>
+            </div>
+            <div class="section2">
+                <p>Sorted</p>
+            </div>
+        </div>
+        <div class="div3">
+
+            <div class="section2">
+                <p>Revenue</p>
+            </div>
+            <div class="section2">
+                <p></p>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="right">
+        <div class="div3">
+            <div class="section2">
+                <p>Waste collection</p>
+                <div>
+                    <span *ngFor="let w of wList; let i=index">
+                        <p>{{w.name}}</p>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,237 @@
+<form (ngSubmit)="onSubmit()" class="form-container">
+    <!-- <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-container"> -->
+    <div class="form-section">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" [(ngModel)]="formData.date" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="endDestination">End Destination:</label>
+        <input type="text" id="endDestination" name="endDestination" [(ngModel)]="formData.endDestination" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" [(ngModel)]="formData.address" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="vehicleNo">Vehicle No.:</label>
+        <input type="text" id="vehicleNo" name="vehicleNo" [(ngModel)]="formData.vehicleNo" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="driverName">Driver Name:</label>
+        <input type="text" id="driverName" name="driverName" [(ngModel)]="formData.driverName" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="driverPhone">Driver Phone No.:</label>
+        <input type="tel" id="driverPhone" name="driverPhone" [(ngModel)]="formData.driverPhone" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="transportVendor">Transport Vendor:</label>
+        <input type="text" id="transportVendor" name="transportVendor" [(ngModel)]="formData.transportVendor" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="transportCost">Transport Cost:</label>
+        <input type="number" id="transportCost" name="transportCost" [(ngModel)]="formData.transportCost" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="additionalTransportCost">Additional Transport Cost:</label>
+        <input type="number" id="additionalTransportCost" name="additionalTransportCost"
+            [(ngModel)]="formData.additionalTransportCost" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="product">Product:</label>
+        <input type="text" id="product" name="product" [(ngModel)]="formData.product" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" [(ngModel)]="formData.quantity" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="ratePerKg">Rate per kg:</label>
+        <input type="number" id="ratePerKg" name="ratePerKg" [(ngModel)]="formData.ratePerKg" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="billedAmount">Billed Amount:</label>
+        <input type="number" id="billedAmount" name="billedAmount" [(ngModel)]="formData.billedAmount" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="acceptedQuantity">Accepted Quantity:</label>
+        <input type="number" id="acceptedQuantity" name="acceptedQuantity" [(ngModel)]="formData.acceptedQuantity"
+            required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="reductionPercentage">Reduction %:</label>
+        <input type="number" id="reductionPercentage" name="reductionPercentage"
+            [(ngModel)]="formData.reductionPercentage" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="reductionQuantity">Reduction Quantity:</label>
+        <input type="number" id="reductionQuantity" name="reductionQuantity" [(ngModel)]="formData.reductionQuantity"
+            required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="amountPaid">Amount Paid for Accepted Quantity:</label>
+        <input type="number" id="amountPaid" name="amountPaid" [(ngModel)]="formData.amountPaid" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="weightslip">Weightslip:</label>
+        <input type="file" id="weightslip" name="weightslip" (change)="onFileChange($event)" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="lorryReceiptCopy">Lorry Receipt Copy:</label>
+        <input type="file" id="lorryReceiptCopy" name="lorryReceiptCopy" (change)="onFileChange($event)" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="totalQuantity">Total Quantity (kg):</label>
+        <input type="number" id="totalQuantity" name="totalQuantity" [(ngModel)]="formData.totalQuantity" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="igst">IGST:</label>
+        <input type="number" id="igst" name="igst" [(ngModel)]="formData.igst" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="cgst">CGST:</label>
+        <input type="number" id="cgst" name="cgst" [(ngModel)]="formData.cgst" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="sgst">SGST:</label>
+        <input type="number" id="sgst" name="sgst" [(ngModel)]="formData.sgst" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="gst">GST:</label>
+        <input type="number" id="gst" name="gst" [(ngModel)]="formData.gst" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="totalBillQuantity">Total Bill Quantity:</label>
+        <input type="number" id="totalBillQuantity" name="totalBillQuantity" [(ngModel)]="formData.totalBillQuantity"
+            required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="invoiceNumber">Invoice Number:</label>
+        <input type="text" id="invoiceNumber" name="invoiceNumber" [(ngModel)]="formData.invoiceNumber" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="dcNumber">DC Number:</label>
+        <input type="text" id="dcNumber" name="dcNumber" [(ngModel)]="formData.dcNumber" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="acknowledgedDC">Acknowledged DC:</label>
+        <input type="text" id="acknowledgedDC" name="acknowledgedDC" [(ngModel)]="formData.acknowledgedDC" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="totalAcceptedQuantity">Total Accepted Quantity (kg):</label>
+        <input type="number" id="totalAcceptedQuantity" name="totalAcceptedQuantity"
+            [(ngModel)]="formData.totalAcceptedQuantity" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="totalReductionQuantity">Total Reduction Quantity (kg):</label>
+        <input type="number" id="totalReductionQuantity" name="totalReductionQuantity"
+            [(ngModel)]="formData.totalReductionQuantity" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="totalValueAcceptedQuantity">Total Value of Accepted Quantity (kg):</label>
+        <input type="number" id="totalValueAcceptedQuantity" name="totalValueAcceptedQuantity"
+            [(ngModel)]="formData.totalValueAcceptedQuantity" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="totalPaidAmount">Total Paid Amount (Paid Amount + Tax):</label>
+        <input type="number" id="totalPaidAmount" name="totalPaidAmount" [(ngModel)]="formData.totalPaidAmount"
+            required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments" [(ngModel)]="formData.comments"></textarea>
+    </div>
+
+    <div class="form-section">
+        <label for="vehicleGPSPhoto1">Vehicle GPS Photo 1:</label>
+        <input type="file" id="vehicleGPSPhoto1" name="vehicleGPSPhoto1" (change)="onFileChange($event)" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="vehicleGPSPhoto2">Vehicle GPS Photo 2:</label>
+        <input type="file" id="vehicleGPSPhoto2" name="vehicleGPSPhoto2" (change)="onFileChange($event)" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="vehicleGPSPhoto3">Vehicle GPS Photo 3:</label>
+        <input type="file" id="vehicleGPSPhoto3" name="vehicleGPSPhoto3" (change)="onFileChange($event)" required>
+    </div>
+
+
+    <div class="form-section">
+        <label for="vehicleGPSPhoto4">Vehicle GPS Photo 4:</label>
+        <input type="file" id="vehicleGPSPhoto4" name="vehicleGPSPhoto4" (change)="onFileChange($event)" required>
+    </div>
+
+
+    <div class="form-section" style="margin-top: 20px;">
+        <button type="submit">Submit</button>
+        <!-- <button type="submit" [disabled]="!form.valid">Submit</button> -->
+    </div>
+</form>

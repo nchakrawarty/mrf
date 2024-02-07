@@ -1,0 +1,59 @@
+div {
+    font-family: "Poppins", sans-serif;
+}
+
+table {
+
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+th {
+    color: #A67753;
+}
+
+td,
+th {
+    // border: 1px solid #D17C30;
+    text-align: left;
+    padding: 8px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    button {
+        width: 150px;
+        background-color: #D17C30;
+        color: #fff;
+    }
+}
+
+.sec-two {
+    border-top: 1px solid rgb(209 124 48);
+    margin-top: 50px;
+    background: rgb(209 124 48 / 6%);
+    padding: 15px;
+
+    div {
+        margin-top: 10px;
+        background-color: #d17c302e;
+        padding: 5px;
+        border-radius: 5px;
+    }
+}
+
+::ng-deep .mat-select-trigger {
+    // min-width: 80vw;
+}
+
+::ng-deep .mat-select-panel {
+    max-height: 80vh !important;
+    background-color: #f4e7dc;
+}
+
+// tr:nth-child(even) {
+//     background-color: #d17b305d;
+// }

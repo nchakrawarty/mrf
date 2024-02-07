@@ -1,0 +1,108 @@
+<section class="full-height">
+    <!-- <form style="    display: flex;
+    justify-content: flex-end;">
+        <div>
+
+            <mat-form-field style="margin-top: 30px;" appearance="outline">
+                <mat-label> Select Taluk</mat-label>
+                <mat-select (selectionChange)="distfunct($event.value)" name="dis">
+                    <mat-option *ngFor="let dis of taluk" [value]="dis">
+                        {{dis.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div *ngIf="selectedValue">
+
+
+            <mat-form-field style="margin-top: 30px;" appearance="outline">
+                <mat-label>Select Panchayat</mat-label>
+                <mat-select (selectionChange)="callcenter($event.value)" name="cen">
+                    <mat-option *ngFor="let cen of panchayat" [value]="cen">
+                        {{cen.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+       <p> Selected car: {{selectedCar}} </p>
+    </form> -->
+<div style="display: block;float: right;">
+  <button type="button" (click)="openAddBag()">Add Bags</button>
+</div>
+    <table class="full-screen-table">
+        <tr style="padding: 20px;">
+            <th>Date</th>
+            <th>Time</th>
+            <th>Panchayat</th>
+            <th>Panchayat Id</th>
+            <th>Total Bags</th>
+            <th>Bags Weighed</th>
+            <th>Add Bag details</th>
+
+        </tr>
+
+<tr  class="row-with-margin">
+<div style="width: 100%;">
+  <mat-accordion style="width: 100%;">
+    <mat-expansion-panel class="mtexp" *ngFor="let row of bags"  [ngStyle]="{'border-left': row.bagdetails?.length<row.bagNumber? '5px solid red': '5px solid green'}">
+      <mat-expansion-panel-header class="panel-header">
+        <td>{{ row.time| slice:0:10 }}</td>
+    <td>{{ row.time | slice:12:19}}</td>
+    <td>{{ row.panchayatName }}</td>
+    <td>{{ row.code }}</td>
+    <td>{{ row.bagNumber }}</td>
+    <td>{{ row.bagdetails?.length }} <span *ngIf="!row.bagdetails">0</span> </td>
+
+    <td *ngIf="row.weightAtMRF==='0'"> <button type="button" (click)="openModal(row)">Add weight</button></td>
+      </mat-expansion-panel-header>
+     <div style="background-color: #FFF7EF; padding: 20px; border-radius: 15px;">
+      <div class="bagdetails">
+        <p>
+         Date
+         </p>
+         <p>
+          Bag number
+         </p>
+         <p>
+          Bag weight
+         </p>
+       </div>
+       <div class="bagdetails" *ngFor="let i of row.bagdetails">
+        <p>
+          {{i.date|slice:0:10}}
+
+         </p>
+         <p>
+          {{i.bagNum}}
+
+         </p>
+         <p>
+          {{i.weight}}
+         </p>
+       </div>
+     </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+</tr>
+        <!-- <tr *ngFor="let row of bags" class="row-with-margin">
+            <td>{{ row.time| slice:0:10 }}</td>
+            <td>{{ row.time | slice:12:19}}</td>
+            <td>{{ row.panchayatName }}</td>
+            <td>{{ row.code }}</td>
+            <td>{{ row.bagNumber }}</td>
+            <td>{{ row.bagdetails?.length }} <span *ngIf="!row.bagdetails">0</span> </td>
+            <td *ngIf="row.weightAtMRF==='0'"> <button type="button" (click)="openModal(row)">Add weight</button></td>
+        </tr> -->
+
+    </table>
+    <h2 *ngIf="!bags">
+        Panchayat not selected
+    </h2>
+    <h2 *ngIf="bags?.length ==0">
+        No bags collected
+    </h2>
+</section>
+<div>
+
+</div>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { InternetSpeedService } from './internet-speed.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mrf';
+  constructor(private internetSpeedService: InternetSpeedService) { }
+  ngOnInit(): void {
+    // element.requestFullScreen()
+  }
+
+
+  logout() {
+    console.log("lg out")
+  }
 }

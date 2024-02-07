@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="div1">Dashboard-MRF</div>
+    <div class="div2">
+        <!-- <div class="section" (click)="duration('1')">Day</div>
+        <div class="section" (click)="duration('7')">Week</div>
+        <div class="section" (click)="duration('30')">Month</div>
+        <div class="section" (click)="duration('120')">Quarter</div>
+        <div class="section" (click)="duration('360')">Year</div> -->
+        <button type="button" (click)="openModal()">Add weight</button>
+    </div>
+</div>
+<div class="container2">
+    <div class="left">
+        <div class="div3">
+            <div class="section2">
+                <p>Total waste</p>
+                <h2>{{total}} Kg </h2>
+
+            </div>
+            <div class="section2">
+                <p>Total waste sold</p>
+                <h2>0 Kg</h2>
+            </div>
+        </div>
+        <div class="div3">
+            <div class="section2">
+                <p>Today's Waste</p>
+                <h2>{{total}} Kg </h2>
+
+            </div>
+            <div class="section2">
+                <p>Sorted</p>
+                <h2>{{total}} Kg </h2>
+
+            </div>
+        </div>
+        <div class="div3" style="flex-wrap: wrap;">
+            <div class="section2">
+                <!-- <p>Total waste sold</p> -->
+                <p>Bailing</p>
+                <h2>{{baletotal}} Kg </h2>
+            </div>
+            <div class="section2-2">
+                <button (click)=" generatePDF()">Download Report</button>
+            </div>
+        </div>
+
+        <!-- <div class="div3">
+            <div class="section2">
+                <p>Bailing</p>
+            </div>
+            <div class="section2">
+                <p>Expenditure</p>
+            </div>
+        </div> -->
+    </div>
+    <div class="right">
+        <div class="div3">
+            <div class="section2">
+                <p>Waste collection</p>
+                <div class="wlist" *ngIf="wList">
+                    <span *ngFor="let w of wList; let i=index">
+                        <p><span>{{w.name}}</span> <span> {{w.totalAmount}} Kg</span></p>
+                    </span>
+                </div>
+                <div class="wlist" *ngIf="!wList">
+                 <p> No Data for waste collected</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div>{{pdfdoc}} </div> -->
+
