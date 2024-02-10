@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent, canActivate:[NoauthGuard] },
   // { path: '', redirectTo: '/home', pathMatch: 'full',canActivate: [AuthGuard] }, // Redirect to the home page
-  { path: 'home', component: HomeComponent,canActivate: [AuthGuard] },
+  { path: 'home', component: HomeComponent,canActivate: [NoauthGuard] },
   { path: 'sale', component: SaleComponent,canActivate: [AuthGuard] },
   { path: 'vehicle', component: VehicleComponent,canActivate: [AuthGuard] },
   { path: 'daily-production', component: DailyProductionComponent,canActivate: [AuthGuard] },
